@@ -1,17 +1,17 @@
 import streamlit as st
-from apps.user_engagement_analysis import app as engagement_app
-from apps.user_experience_analysis import app as experience_app
-from apps.user_satisfaction_analysis import app as satisfaction_app
+from app.user_engagement_analysis import app as engagement_app
+from app.user_experience_analysis import app as experience_app
+from app.user_satisfaction_analysis import app as satisfaction_app
 
 class MultiApp:
     def __init__(self):
-        self.apps = []
+        self.app = []
 
     def add_app(self, title, func):
-        self.apps.append({"title": title, "function": func})
+        self.app.append({"title": title, "function": func})
 
     def run(self):
-        app = st.sidebar.selectbox("Select Analysis", self.apps, format_func=lambda app: app['title'])
+        app = st.sidebar.selectbox("Select Analysis", self.app, format_func=lambda app: app['title'])
         app['function']()
 
 # Create the app

@@ -2,10 +2,10 @@ import streamlit as st
 from multiapp import MultiApp
 
 # Import the converted notebooks as modules
-from apps import User_Overview_Analysis
-from apps import user_engagement_analysis
-from apps import user_experience_analysis
-from apps import user_satisfaction_analysis
+from app import User_Overview_Analysis
+from app import user_engagement_analysis
+from app import user_experience_analysis
+from app import user_satisfaction_analysis
 
 # Create a multi-page app
 app = MultiApp()
